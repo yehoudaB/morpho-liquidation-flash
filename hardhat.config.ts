@@ -8,7 +8,7 @@ import "hardhat-gas-reporter";
 import "solidity-coverage";
 
 dotenv.config();
-const mainnetUrl = `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_KEY}`;
+const mainnetUrl = `https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_KEY}`;
 const config: HardhatUserConfig = {
   solidity: "0.8.13",
   defaultNetwork: "hardhat",

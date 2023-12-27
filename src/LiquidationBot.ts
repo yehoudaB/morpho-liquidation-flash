@@ -74,6 +74,7 @@ export default class LiquidationBot {
     amount: BigNumber,
     swapPath: string
   ) {
+    console.log("liquidate :", user, amount.toString());
     const liquidationParams: LiquidationParams = {
       poolTokenBorrowed,
       poolTokenCollateral,
@@ -298,6 +299,7 @@ export default class LiquidationBot {
           amount: userToLiquidate!.toLiquidate,
           swapPath,
         };
+
         await this.liquidationHandler.handleLiquidation(liquidateParams);
       }
     }
