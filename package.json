@@ -2,17 +2,15 @@
   "name": "morpho-liquidation-flash",
   "version": "1.0.0",
   "main": "index.js",
-  
   "engines": {
     "node": ">=14.0.0"
   },
-  
   "repository": "git@github.com:morpho-labs/morpho-liquidation-flash.git",
   "author": "julien <julien.thomas84@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "yarn hardhat test",
-    "run:bot": "yarn build:bot && ts-node scripts/runBot.ts",
+    "run:bot": "yarn build:bot &&  ts-node src/index.ts",
     "lint:fix": "npx prettier '**/*.{json,sol,md,ts}' --write",
     "deploy:contracts": "hardhat run scripts/deploy.ts --network mainnet",
     "compile": "yarn hardhat compile",
@@ -34,10 +32,11 @@
     "@uniswap/v3-periphery": "1.4.1",
     "@uniswap/v3-sdk": "^3.9.0",
     "aws-sdk": "^2.1181.0",
-    "ethers": "^5.7.2",
     "axios": "^0.27.2",
+    "ethers": "^5.7.2",
     "hardhat": "^2.9.6",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.0",
@@ -66,7 +65,7 @@
     "slot20": "^0.0.3",
     "solhint": "^3.3.6",
     "solidity-coverage": "^0.7.16",
-    "ts-node": "^10.1.0",
+    "ts-node": "^10.9.2",
     "typechain": "^5.1.2",
     "typescript": "^4.5.2"
   }

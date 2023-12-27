@@ -31,7 +31,7 @@ const initializers: Record<
   aave: initAave,
   compound: initCompound,
 };
-const main = async (): Promise<any> => {
+export const main = async (): Promise<any> => {
   const useFlashLiquidator = process.argv.includes("--flash");
   const pk = process.env.PRIVATE_KEY;
   const provider = new providers.AlchemyProvider(1, process.env.ALCHEMY_KEY);

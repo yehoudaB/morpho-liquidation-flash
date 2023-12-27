@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:20
 
 COPY package.json yarn.lock ./
 
@@ -6,10 +6,5 @@ RUN yarn install --frozen-lockfile
 
 COPY . .
 
-RUN yarn build:bot
-
-COPY package.json ./dist
-
-
-CMD [ "node", "dist/script/runBot.js" ]
-
+RUN yarn tsc
+CMD [ "node_modules/.bin/ts-node", "dist/src/index.js" ]
