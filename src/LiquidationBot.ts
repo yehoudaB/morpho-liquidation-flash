@@ -299,8 +299,9 @@ export default class LiquidationBot {
           amount: userToLiquidate!.toLiquidate,
           swapPath,
         };
-
-        await this.liquidationHandler.handleLiquidation(liquidateParams);
+        console.log("handleLiquidation :", liquidateParams);
+        const resp = await this.liquidationHandler.handleLiquidation(liquidateParams).catch((err) => console.log("handleLiquidation error ", err));
+        console.log("resp :", resp);
       }
     }
   }
